@@ -1,4 +1,4 @@
-buildscript {
+/*buildscript {
     ext.kotlin_version = '1.7.20'
     repositories {
         google()
@@ -10,13 +10,16 @@ buildscript {
         classpath 'com.android.tools.build:gradle:7.1.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
-}
+}*/
 
 
 plugins {
     id 'com.android.library'
     id 'maven-publish'
 }
+
+group = 'com.github.jitpack'
+version = '1.0'
 
 android {
     namespace 'com.tpcodl.android_demo_lib'
@@ -58,7 +61,7 @@ android {
 
 
 }
-afterEvaluate {
+/*afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
@@ -69,7 +72,7 @@ afterEvaluate {
             }
         }
     }
-}
+}*/
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -77,4 +80,18 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.jitpack'
+                artifactId = 'android-example'
+                version = '1.0'
+            }
+        }
+    }
 }
