@@ -18,8 +18,9 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.github.jitpack'
+group = 'com.github.mobilitytpodish2024'
 version = '1.0'
+
 
 android {
     namespace 'com.tpcodl.android_demo_lib'
@@ -88,8 +89,8 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.jitpack'
-                artifactId = 'android-example'
+                groupId = 'com.github.mobilitytpodish2024'
+                artifactId = 'android-demo-lib-release'
                 version = '1.0'
             }
         }
