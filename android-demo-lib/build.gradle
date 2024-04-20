@@ -91,7 +91,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.mobilitytpodish2024'
                 artifactId = 'android-demo-lib-release'
-                version = '1.4'
+                version = '1.5'
             }
         }
     }
