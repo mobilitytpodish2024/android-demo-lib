@@ -16,6 +16,8 @@ buildscript {
 plugins {
     id 'com.android.library'
     id 'maven-publish'
+    id 'com.jfrog.artifactory' version "5.2.0"
+
 }
 
 /*group = 'com.github.mobilitytpodish2024'
@@ -53,24 +55,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_18
     }
 
-    /*compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }*/
-
-  /*  afterEvaluate {
-        publishing {
-            publications {
-                // Creates a Maven publication called "release".
-                release(MavenPublication) {
-                    from components.release
-                    groupId = 'com.github.mobilitytpodish2024'
-                    artifactId = 'android-demo-lib-release'
-                    version = '1.5'
-                }
-            }
-        }
-    }*/
 
     android {
         publishing {
@@ -78,24 +62,24 @@ android {
                 withSourcesJar()
                 withJavadocJar()
             }
-
+            // ...
         }
     }
 
-
-}
-/*afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.github.mobilitytpodish2024'
-                artifactId = 'android-demo-lib'
-                version = '1.1'
+  /*  afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    from components.release
+                    groupId = 'com.github.mobilitytpodish2024'
+                    artifactId = 'android-demo-lib'
+                    version = '1.1'
+                }
             }
         }
-    }
-}*/
+    }*/
+}
+
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -105,17 +89,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
-/*
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.github.mobilitytpodish2024'
-                artifactId = 'android-demo-lib-release'
-                version = '1.5'
-            }
-        }
-    }
-}*/
+
+
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.artifactory'
