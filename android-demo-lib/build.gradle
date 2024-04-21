@@ -4,6 +4,9 @@ buildscript {
         google()
         mavenCentral()
         mavenLocal()            // << --- ADD This
+
+
+        maven { url "https://jitpack.io"  }
     }
 
     dependencies {
@@ -90,7 +93,7 @@ dependencies {
 }
 
 
-afterEvaluate {
+/*afterEvaluate {
     publishing {
         publications {
             // Creates a Maven publication called "release".
@@ -100,6 +103,16 @@ afterEvaluate {
                 artifactId = 'android-demo-lib-release'
                 version = '1.4'
             }
+        }
+    }
+}*/
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.github.mobilitytpodish2024'
+            artifactId = 'android-demo-lib-release'
+            version = '7.0.0'
         }
     }
 }
