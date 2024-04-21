@@ -33,7 +33,7 @@ android {
     defaultConfig {
         minSdk 21
         targetSdk 34
-
+        versionName "3.1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -119,10 +119,10 @@ dependencies {
 
 publishing {
     publications {
-        release(MavenPublication) {
-            afterEvaluate {
-                from components.release
-            }
+        mavenJava(MavenPublication) {
+            groupId = 'com.github.mobilitytpodish2024'
+            artifactId = 'android-demo-lib-release'
+            version = '3.1.1'
         }
     }
 }
