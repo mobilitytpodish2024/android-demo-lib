@@ -58,7 +58,27 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }*/
 
+  /*  afterEvaluate {
+        publishing {
+            publications {
+                // Creates a Maven publication called "release".
+                release(MavenPublication) {
+                    from components.release
+                    groupId = 'com.github.mobilitytpodish2024'
+                    artifactId = 'android-demo-lib-release'
+                    version = '1.5'
+                }
+            }
+        }
+    }*/
 
+    publishing {
+        multipleVariants {
+            withSourcesJar()
+            withJavadocJar()
+            allVariants()
+        }
+    }
 
 
 }
@@ -83,6 +103,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
+/*
 afterEvaluate {
     publishing {
         publications {
@@ -95,4 +116,4 @@ afterEvaluate {
             }
         }
     }
-}
+}*/
