@@ -112,7 +112,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'com.github.mobilitytpodish2024'
             artifactId = 'android-demo-lib-release'
-            version = '7.0.0'
+            version = '8.0.0'
         }
     }
 }
