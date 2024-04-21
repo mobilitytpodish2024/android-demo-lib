@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.mobilitytpodish2024</groupId>
   <artifactId>android-demo-lib</artifactId>
-  <version>8.0.0</version>
+  <version>9.0.0</version>
   <packaging>pom</packaging>
   <description>DESCRIPTION</description>
 </project>

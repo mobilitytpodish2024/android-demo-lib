@@ -107,7 +107,7 @@ dependencies {
     }
 }*/
 
-publishing {
+/*publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = 'com.github.mobilitytpodish2024'
@@ -115,6 +115,18 @@ publishing {
             version = '8.0.0'
         }
     }
+}*/
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
 }
+
+
 apply plugin: "com.jfrog.artifactory"
 apply plugin: 'maven-publish'
